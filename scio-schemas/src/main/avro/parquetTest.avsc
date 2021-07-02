@@ -1,0 +1,42 @@
+[{
+    "type": "record",
+    "name": "ParquetTestRecordOriginal",
+    "namespace": "com.spotify.scio.parquet",
+    "doc": "",
+    "fields": [
+        {
+            "name": "address",
+            "type": {
+                "type": "record",
+                "name": "Address",
+                "namespace": "com.spotify.scio.parquet",
+                "doc": "Record for an address",
+                "fields": [
+                    {"name": "zipcode", "type": "string"}
+                ]
+            }
+        },
+        {"name": "id", "type": "int"}
+    ]
+}, {
+       "type": "record",
+       "name": "ParquetTestRecordEvolved",
+       "namespace": "com.spotify.scio.parquet",
+       "doc": "",
+       "fields": [
+           {"name": "id", "type": "int"},
+           {
+               "name": "address",
+               "type": {
+                   "type": "record",
+                   "name": "AddressEvolved",
+                   "namespace": "com.spotify.scio.parquet",
+                   "doc": "Record for an address",
+                   "fields": [
+                       {"name": "street", "type": ["string", "null"]},
+                       {"name": "zipcode", "type": "string"}
+                   ]
+               }
+           }
+       ]
+   }]
