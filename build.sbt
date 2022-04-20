@@ -33,7 +33,7 @@ val autoServiceVersion = "1.0.1"
 val autoValueVersion = "1.9"
 val avroVersion = "1.8.2"
 val beamVendorVersion = "0.1"
-val beamVersion = "2.36.0"
+val beamVersion = "2.38.0"
 val bigdataossVersion = "2.2.4"
 val bigQueryStorageVersion = "2.8.1"
 val bigtableClientVersion = "1.25.1"
@@ -68,7 +68,7 @@ val googleCloudCoreVersion = "2.3.5"
 val googleCloudSpannerVersion = "6.17.4"
 val googleHttpClientsVersion = "1.41.0"
 val googleOauthClientVersion = "1.32.1"
-val grpcVersion = "1.43.2"
+val grpcVersion = "1.44.0"
 val guavaVersion = "31.0.1-jre"
 val hadoopVersion = "2.10.1"
 val hamcrestVersion = "2.2"
@@ -157,6 +157,8 @@ val commonSettings = Def
       "org.apache.beam" % "beam-sdks-java-io-kafka"
     ),
     resolvers += Resolver.sonatypeRepo("public"),
+    // @Todo: delete once stable Beam release is completed
+    resolvers += "beam-rcs" at "https://repository.apache.org/content/repositories/orgapachebeam-1256/",
     Test / javaOptions += "-Dscio.ignoreVersionWarning=true",
     Test / testOptions += Tests.Argument("-oD"),
     testOptions += Tests.Argument(TestFrameworks.JUnit, "-q", "-v", "-a"),
