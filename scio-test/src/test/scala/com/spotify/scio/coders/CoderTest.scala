@@ -544,10 +544,7 @@ final class CoderTest extends AnyFlatSpec with Matchers {
       )
 
     "Coder[SampleField]" should compile
-    // deriving this coder under 2.11 will fail
-    // https://github.com/scala/bug/issues/5466
-    // https://github.com/propensive/magnolia/issues/78
-    // "Coder[SampleFieldType]" should compile
+    "Coder[SampleFieldType]" should compile
 
     SampleField("hello", StringType) coderShould roundtrip()
 
